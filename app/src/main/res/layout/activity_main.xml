@@ -41,7 +41,7 @@
         android:inputType="number"
         android:textSize="30dp"
         android:hint="Team #"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/teleopMovementText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/autonButton"
         app:layout_constraintTop_toTopOf="parent" />
@@ -306,7 +306,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toEndOf="@+id/checkBox"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/teleopMovementText" />
 
         <Button
             android:id="@+id/button9"
