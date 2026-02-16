@@ -7,19 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/teleopFuelText"
-        android:layout_width="169dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="20dp"
-        android:text="Fuel"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
-
     <EditText
         android:id="@+id/matchNumber"
         android:layout_width="150dp"
@@ -27,6 +14,7 @@
         android:ems="10"
         android:hint="Match #"
         android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/teleopFuelText"
         app:layout_constraintEnd_toStartOf="@+id/autonButton"
@@ -39,6 +27,7 @@
         android:layout_height="61dp"
         android:ems="10"
         android:inputType="number"
+        android:fontFamily="sans-serif-black"
         android:textSize="30dp"
         android:hint="Team #"
         app:layout_constraintBottom_toTopOf="@+id/teleopMovementText"
@@ -46,290 +35,740 @@
         app:layout_constraintStart_toEndOf="@+id/autonButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/autonButton"
-            android:layout_width="200dp"
-            android:layout_height="56dp"
-            android:text="Auton"
-            android:textSize="30dp"
-            android:backgroundTint="#D4AF37"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@android:color/white"
-            app:cornerRadius="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/teleopMovementText"
-            android:layout_width="169dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="20dp"
-            android:text="Movement"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+    <Button
+        android:id="@+id/autonButton"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:text="Auton"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/teleopTowerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/teleopFuelText"
+        android:layout_width="169dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:text="Fuel"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+
+    <TextView
+        android:id="@+id/teleopMovementText"
+        android:layout_width="169dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:text="Movement"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/teleopTowerText"
+        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+
+    <TextView
+        android:id="@+id/teleopTowerText"
         android:layout_width="169dp"
         android:layout_height="41dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="92dp"
-        android:text="TextView"
+        android:layout_marginTop="84dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Tower"
+        android:textAlignment="center"
+        android:textSize="30dp"
         app:layout_constraintStart_toEndOf="@+id/teleopFuelText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-            android:id="@+id/textView5"
-            android:layout_width="114dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginBottom="36dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/textView7"
-            app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/teleopShots"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="36dp"
+        android:text="Shots"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/teleopPasses"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="114dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="188dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+    <TextView
+        android:id="@+id/teleopPasses"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="188dp"
+        android:text="Passes"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="114dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="56dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/textView5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-            app:layout_constraintVertical_bias="0.397" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="68dp"
-            android:layout_height="51dp"
-            android:text="Button"
-            app:layout_constraintBottom_toTopOf="@+id/button5"
-            app:layout_constraintEnd_toStartOf="@+id/textView8"
-            app:layout_constraintHorizontal_bias="0.388"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-            app:layout_constraintVertical_bias="0.358" />
+    <TextView
+        android:id="@+id/teleopPoints"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:text="Points"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/teleopShots"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
+        app:layout_constraintVertical_bias="0.397" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/teleopPointsPlusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/teleopShotsPlusButton"
+        app:layout_constraintEnd_toStartOf="@+id/teleopPointsScore"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toEndOf="@+id/teleopPoints"
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
+        app:layout_constraintVertical_bias="0.358" />
+
+    <Button
+        android:id="@+id/teleopPassesMinusButton"
         android:layout_width="68dp"
         android:layout_height="51dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="180dp"
-        android:text="Button"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
+        android:text="-"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintStart_toEndOf="@+id/teleopPassesScore"
         app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
 
     <Button
-            android:id="@+id/button7"
-            android:layout_width="68dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="32dp"
-            android:text="Button"
-            app:layout_constraintBottom_toTopOf="@+id/button6"
-            app:layout_constraintStart_toEndOf="@+id/textView9" />
+        android:id="@+id/teleopShotsMinusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="-"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/teleopPassesMinusButton"
+        app:layout_constraintStart_toEndOf="@+id/teleopShotsScore" />
 
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="68dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Button"
-            app:layout_constraintBottom_toTopOf="@+id/button7"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-            app:layout_constraintVertical_bias="0.076" />
+    <Button
+        android:id="@+id/teleopPointsMinusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="-"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/teleopShotsMinusButton"
+        app:layout_constraintStart_toEndOf="@+id/teleopPointsScore"
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
+        app:layout_constraintVertical_bias="0.076" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="68dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="104dp"
-            android:text="Button"
-            app:layout_constraintEnd_toStartOf="@+id/textView9"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+    <Button
+        android:id="@+id/teleopShotsPlusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="104dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/teleopShotsScore"
+        app:layout_constraintStart_toEndOf="@+id/teleopShots"
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/teleopPointsScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="12dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/teleopShotsScore"
+        app:layout_constraintStart_toEndOf="@+id/teleopPoints"
         app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/teleopShotsScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
         android:layout_marginStart="84dp"
         android:layout_marginBottom="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/teleopPassesScore"
+        app:layout_constraintStart_toEndOf="@+id/teleopShots" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/teleopPassesScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
         android:layout_marginStart="84dp"
         android:layout_marginBottom="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
-        app:layout_constraintStart_toEndOf="@+id/textView7" />
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/commentEditText"
+        app:layout_constraintStart_toEndOf="@+id/teleopPasses" />
 
     <Button
-            android:id="@+id/button3"
-            android:layout_width="68dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="28dp"
-            android:text="Button"
-            app:layout_constraintEnd_toStartOf="@+id/textView10"
-            app:layout_constraintHorizontal_bias="0.611"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-        <EditText
-            android:id="@+id/editTextTextMultiLine"
-            android:layout_width="342dp"
-            android:layout_height="173dp"
-            android:layout_marginStart="48dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="12dp"
-            android:text="CheckBox"
-            app:layout_constraintStart_toEndOf="@+id/button8"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            android:text="CheckBox"
-            app:layout_constraintStart_toEndOf="@+id/button7"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            android:text="CheckBox"
-            app:layout_constraintStart_toEndOf="@+id/button7"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        android:id="@+id/teleopPassesPlusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/teleopPassesScore"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toEndOf="@+id/teleopPasses"
+        app:layout_constraintTop_toBottomOf="@+id/teleopShotsPlusButton" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/teleopClimbCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="Climb"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/teleopPointsMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleopTowerText" />
+
+    <CheckBox
+        android:id="@+id/teleopL1Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="L1"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/teleopShotsMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleopClimbCheckbox" />
+
+    <CheckBox
+        android:id="@+id/teleopL2CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="L2"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/teleopShotsMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleopL1Checkbox" />
+
+    <CheckBox
+        android:id="@+id/teleopL3Checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
-        android:text="CheckBox"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        android:text="L3"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/teleopPassesMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/teleopL2CheckBox" />
 
     <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="CheckBox"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toEndOf="@+id/checkBox2"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+        android:id="@+id/teleopRampCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Ramp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toEndOf="@+id/teleopL1Checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/teleopTrenchCheckbox" />
 
-        <CheckBox
-            android:id="@+id/checkBox7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="CheckBox"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toEndOf="@+id/checkBox3"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+    <CheckBox
+        android:id="@+id/teleopHPCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Human Station"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toEndOf="@+id/teleopL2CheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/teleopRampCheckbox" />
 
-        <CheckBox
-            android:id="@+id/checkBox8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="CheckBox"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toEndOf="@+id/checkBox4"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
+    <CheckBox
+        android:id="@+id/teleopGroundPickupCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Ground Pickup"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintStart_toEndOf="@+id/teleopL3Checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/teleopHPCheckbox" />
 
-        <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="CheckBox"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toEndOf="@+id/checkBox"
-            app:layout_constraintTop_toBottomOf="@+id/teleopMovementText" />
+    <CheckBox
+        android:id="@+id/teleopTrenchCheckbox"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Trench"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toEndOf="@+id/teleopClimbCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/teleopMovementText" />
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="216dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="52dp"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.825"
-            app:layout_constraintStart_toEndOf="@+id/editTextTextMultiLine"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
+    <Button
+        android:id="@+id/SubmitButton"
+        android:layout_width="216dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="72dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        app:cornerRadius="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toEndOf="@+id/commentEditText"
+        app:layout_constraintTop_toBottomOf="@+id/teleopGroundPickupCheckbox" />
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="228dp"
-            android:layout_height="41dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.849"
-            app:layout_constraintStart_toEndOf="@+id/editTextTextMultiLine"
-            app:layout_constraintTop_toBottomOf="@+id/button9"
-            app:layout_constraintVertical_bias="0.535" />
+    <TextView
+        android:id="@+id/userTextView"
+        android:layout_width="228dp"
+        android:layout_height="41dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Username"
+        android:textAlignment="viewStart"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toEndOf="@+id/commentEditText"
+        app:layout_constraintTop_toBottomOf="@+id/SubmitButton"
+        app:layout_constraintVertical_bias="0.529" />
 
+    <EditText
+        android:id="@+id/commentEditText"
+        android:layout_width="542dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="48dp"
+        android:ems="10"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-black"
+        android:hint="Comments"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleopPassesPlusButton" />
+
+    <TextView
+        android:id="@+id/autonFuelText"
+        android:layout_width="169dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:text="Fuel"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+
+    <TextView
+        android:id="@+id/autonMovementText"
+        android:layout_width="169dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:text="Movement"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/teleopTowerText"
+        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+
+    <TextView
+        android:id="@+id/autonTowerText"
+        android:layout_width="169dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Tower"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/teleopFuelText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/autonShots"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="36dp"
+        android:text="Shots"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/autonPasses"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/autonPasses"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="188dp"
+        android:text="Passes"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+
+    <TextView
+        android:id="@+id/autonPoints"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:text="Points"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/autonShots"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.397" />
+
+    <Button
+        android:id="@+id/autonPointsPlusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/autonShotsPlusButton"
+        app:layout_constraintEnd_toStartOf="@+id/autonPointsScore"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toEndOf="@+id/autonPoints"
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.358" />
+
+    <Button
+        android:id="@+id/autonPassesMinusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="180dp"
+        android:text="-"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintStart_toEndOf="@+id/autonPassesScore"
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText" />
+
+    <Button
+        android:id="@+id/autonShotsMinusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="-"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/autonPassesMinusButton"
+        app:layout_constraintStart_toEndOf="@+id/autonShotsScore" />
+
+    <Button
+        android:id="@+id/autonPointsMinusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="-"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/autonShotsMinusButton"
+        app:layout_constraintStart_toEndOf="@+id/autonPointsScore"
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <Button
+        android:id="@+id/autonShotsPlusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="104dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/autonShotsScore"
+        app:layout_constraintStart_toEndOf="@+id/autonShots"
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText" />
+
+    <TextView
+        android:id="@+id/autonPointsScore"
+        android:layout_width="61dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/autonShotsScore"
+        app:layout_constraintStart_toEndOf="@+id/autonPoints"
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/autonShotsScore"
+        android:layout_width="61dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="20dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/autonPassesScore"
+        app:layout_constraintStart_toEndOf="@+id/autonShots" />
+
+    <TextView
+        android:id="@+id/autonPassesScore"
+        android:layout_width="61dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="32dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/commentEditText"
+        app:layout_constraintStart_toEndOf="@+id/autonPasses" />
+
+    <Button
+        android:id="@+id/autonPassesPlusButton"
+        android:layout_width="68dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:backgroundTint="#D4AF37"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@android:color/white"
+        app:cornerRadius="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/autonPassesScore"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toEndOf="@+id/autonPasses"
+        app:layout_constraintTop_toBottomOf="@+id/autonShotsPlusButton" />
+
+    <CheckBox
+        android:id="@+id/autonClimbCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="Climb"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/autonPointsMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/autonTowerText" />
+
+    <CheckBox
+        android:id="@+id/autonL1Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="L1"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/autonShotsMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/autonClimbCheckbox" />
+
+    <CheckBox
+        android:id="@+id/autonL2CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="L2"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/autonShotsMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/autonL1Checkbox" />
+
+    <CheckBox
+        android:id="@+id/autonL3Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="L3"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toEndOf="@+id/autonPassesMinusButton"
+        app:layout_constraintTop_toBottomOf="@+id/autonL2CheckBox" />
+
+    <CheckBox
+        android:id="@+id/autonRampCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Ramp"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toEndOf="@+id/autonL1Checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/autonTrenchCheckbox" />
+
+    <CheckBox
+        android:id="@+id/autonHPCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Human Station"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toEndOf="@+id/autonL2CheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/autonRampCheckbox" />
+
+    <CheckBox
+        android:id="@+id/autonGroundPickupCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Ground Pickup"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintStart_toEndOf="@+id/autonL3Checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/autonHPCheckbox" />
+
+    <CheckBox
+        android:id="@+id/autonTrenchCheckbox"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Trench"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toEndOf="@+id/autonClimbCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/teleopMovementText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
