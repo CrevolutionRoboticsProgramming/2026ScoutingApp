@@ -11,12 +11,12 @@
         android:id="@+id/matchNumber"
         android:layout_width="150dp"
         android:layout_height="61dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="Match #"
-        android:textSize="30dp"
         android:fontFamily="sans-serif-black"
+        android:hint="Match #"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/teleopFuelText"
+        android:textSize="30dp"
         app:layout_constraintEnd_toStartOf="@+id/autonButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,13 +25,14 @@
         android:id="@+id/teamNumber"
         android:layout_width="150dp"
         android:layout_height="61dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
-        android:inputType="number"
         android:fontFamily="sans-serif-black"
-        android:textSize="30dp"
         android:hint="Team #"
-        app:layout_constraintBottom_toTopOf="@+id/teleopMovementText"
+        android:inputType="number"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toEndOf="@+id/autonButton"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,14 +40,15 @@
         android:id="@+id/autonButton"
         android:layout_width="200dp"
         android:layout_height="56dp"
-        android:text="Auton"
-        android:textSize="30dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="Auton"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/teleopTowerText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,40 +56,49 @@
         android:id="@+id/teleopFuelText"
         android:layout_width="169dp"
         android:layout_height="41dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="20dp"
-        android:text="Fuel"
-        android:textSize="30dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-black"
+        android:text="Fuel"
         android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+        app:layout_constraintTop_toBottomOf="@+id/autonButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/teleopMovementText"
         android:layout_width="169dp"
         android:layout_height="41dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
         android:text="Movement"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/teleopClimbCheckbox"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toEndOf="@+id/teleopTowerText"
-        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+        app:layout_constraintTop_toBottomOf="@+id/autonButton"
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
         android:id="@+id/teleopTowerText"
         android:layout_width="169dp"
         android:layout_height="41dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="84dp"
         android:fontFamily="sans-serif-black"
         android:text="Tower"
         android:textAlignment="center"
         android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teleopFuelText"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/teleopShots"
@@ -95,56 +106,66 @@
         android:layout_height="48dp"
         android:layout_marginStart="56dp"
         android:layout_marginBottom="36dp"
+        android:fontFamily="sans-serif-black"
         android:text="Shots"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/teleopPasses"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/teleopFuelText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autonShots"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/teleopPasses"
         android:layout_width="114dp"
         android:layout_height="48dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="184dp"
+        android:fontFamily="sans-serif-black"
         android:text="Passes"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/autonShotsScore"
+        app:layout_constraintEnd_toStartOf="@+id/teleopFuelText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/teleopPoints"
         android:layout_width="114dp"
         android:layout_height="48dp"
         android:layout_marginStart="56dp"
+        android:fontFamily="sans-serif-black"
         android:text="Points"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/teleopShots"
+        app:layout_constraintEnd_toStartOf="@+id/teleopFuelText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <Button
         android:id="@+id/teleopPointsPlusButton"
         android:layout_width="68dp"
         android:layout_height="51dp"
-        android:text="+"
-        android:textSize="30dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="+"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toTopOf="@+id/teleopShotsPlusButton"
         app:layout_constraintEnd_toStartOf="@+id/teleopPointsScore"
-        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/teleopPoints"
         app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-        app:layout_constraintVertical_bias="0.358" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <Button
         android:id="@+id/teleopPassesMinusButton"
@@ -152,14 +173,18 @@
         android:layout_height="51dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="180dp"
-        android:text="-"
-        android:textSize="30dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="-"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/commentEditText"
+        app:layout_constraintEnd_toEndOf="@+id/teleopShotsMinusButton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/teleopPassesScore"
-        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
+        app:layout_constraintVertical_bias="0.085" />
 
     <Button
         android:id="@+id/teleopShotsMinusButton"
@@ -167,14 +192,18 @@
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="32dp"
-        android:text="-"
-        android:textSize="30dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="-"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toTopOf="@+id/teleopPassesMinusButton"
-        app:layout_constraintStart_toEndOf="@+id/teleopShotsScore" />
+        app:layout_constraintEnd_toEndOf="@+id/teleopPointsMinusButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/teleopShotsScore"
+        app:layout_constraintTop_toBottomOf="@+id/teleopPointsScore"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/teleopPointsMinusButton"
@@ -182,60 +211,69 @@
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="-"
-        android:textSize="30dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="-"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toTopOf="@+id/teleopShotsMinusButton"
+        app:layout_constraintEnd_toStartOf="@+id/teleopTowerText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teleopPointsScore"
         app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/teleopShotsPlusButton"
         android:layout_width="68dp"
         android:layout_height="51dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="104dp"
-        android:text="+"
-        android:textSize="30dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="+"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/teleopShotsScore"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/teleopShots"
-        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
+        app:layout_constraintVertical_bias="0.242" />
 
     <TextView
         android:id="@+id/teleopPointsScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
         android:text="0"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/teleopShotsScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teleopPoints"
         app:layout_constraintTop_toBottomOf="@+id/teleopFuelText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/teleopShotsScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-black"
         android:text="0"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/teleopPassesScore"
-        app:layout_constraintStart_toEndOf="@+id/teleopShots" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/teleopShots"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/teleopPassesScore"
@@ -243,28 +281,33 @@
         android:layout_height="55dp"
         android:layout_marginStart="84dp"
         android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-black"
         android:text="0"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/commentEditText"
-        app:layout_constraintStart_toEndOf="@+id/teleopPasses" />
+        app:layout_constraintEnd_toStartOf="@+id/teleopL2CheckBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/teleopPasses"
+        app:layout_constraintTop_toBottomOf="@+id/teleopShotsPlusButton"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/teleopPassesPlusButton"
         android:layout_width="68dp"
         android:layout_height="51dp"
-        android:layout_marginTop="28dp"
-        android:text="+"
-        android:textSize="30dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
+        android:text="+"
         android:textColor="@android:color/white"
+        android:textSize="30dp"
         app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/teleopPassesScore"
-        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/teleopPasses"
-        app:layout_constraintTop_toBottomOf="@+id/teleopShotsPlusButton" />
+        app:layout_constraintTop_toBottomOf="@+id/teleopShotsPlusButton"
+        app:layout_constraintVertical_bias="0.144" />
 
     <CheckBox
         android:id="@+id/teleopClimbCheckbox"
@@ -381,7 +424,7 @@
         android:id="@+id/SubmitButton"
         android:layout_width="216dp"
         android:layout_height="54dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="396dp"
         android:layout_marginEnd="72dp"
         android:backgroundTint="#D4AF37"
         android:fontFamily="sans-serif-black"
@@ -390,9 +433,9 @@
         android:textSize="30dp"
         app:cornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toEndOf="@+id/commentEditText"
-        app:layout_constraintTop_toBottomOf="@+id/teleopGroundPickupCheckbox" />
+        app:layout_constraintTop_toBottomOf="@+id/teamNumber" />
 
     <TextView
         android:id="@+id/userTextView"
@@ -404,39 +447,42 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toEndOf="@+id/commentEditText"
         app:layout_constraintTop_toBottomOf="@+id/SubmitButton"
-        app:layout_constraintVertical_bias="0.529" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <EditText
         android:id="@+id/commentEditText"
         android:layout_width="542dp"
         android:layout_height="173dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="60dp"
         android:ems="10"
-        android:textSize="20dp"
         android:fontFamily="sans-serif-black"
-        android:hint="Comments"
         android:gravity="start|top"
+        android:hint="Comments"
         android:inputType="textMultiLine"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleopPassesPlusButton" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/autonFuelText"
         android:layout_width="169dp"
         android:layout_height="41dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="Fuel"
         android:textSize="30dp"
         android:visibility="gone"
         android:fontFamily="sans-serif-black"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+        app:layout_constraintTop_toBottomOf="@+id/autonButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/autonMovementText"
@@ -448,23 +494,29 @@
         android:textSize="30dp"
         android:visibility="gone"
         android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/autonClimbCheckbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/teleopTowerText"
-        app:layout_constraintTop_toBottomOf="@+id/autonButton" />
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toEndOf="@+id/autonTowerText"
+        app:layout_constraintTop_toBottomOf="@+id/autonButton"
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
         android:id="@+id/autonTowerText"
         android:layout_width="169dp"
         android:layout_height="41dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="84dp"
         android:fontFamily="sans-serif-black"
         android:text="Tower"
         android:textAlignment="center"
         android:textSize="30dp"
         android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@+id/teleopFuelText"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/autonFuelText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/autonShots"
@@ -478,21 +530,27 @@
         android:textSize="30dp"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/autonPasses"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/autonFuelText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/autonPasses"
         android:layout_width="114dp"
         android:layout_height="48dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="184dp"
         android:text="Passes"
         android:textAlignment="center"
         android:textSize="30dp"
         android:visibility="gone"
         android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toStartOf="@+id/autonFuelText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleopFuelText" />
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/autonPoints"
@@ -522,10 +580,11 @@
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/autonShotsPlusButton"
         app:layout_constraintEnd_toStartOf="@+id/autonPointsScore"
-        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/autonPoints"
         app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
-        app:layout_constraintVertical_bias="0.358" />
+        app:layout_constraintVertical_bias="0.347" />
+
 
     <Button
         android:id="@+id/autonPassesMinusButton"
@@ -540,8 +599,12 @@
         android:fontFamily="sans-serif-black"
         android:textColor="@android:color/white"
         app:cornerRadius="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/commentEditText"
+        app:layout_constraintEnd_toEndOf="@+id/autonShotsMinusButton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/autonPassesScore"
-        app:layout_constraintTop_toBottomOf="@+id/autonFuelText" />
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.085"  />
 
     <Button
         android:id="@+id/autonShotsMinusButton"
@@ -557,7 +620,11 @@
         android:textColor="@android:color/white"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toTopOf="@+id/autonPassesMinusButton"
-        app:layout_constraintStart_toEndOf="@+id/autonShotsScore" />
+        app:layout_constraintEnd_toEndOf="@+id/autonPointsMinusButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/autonShotsScore"
+        app:layout_constraintTop_toBottomOf="@+id/autonPointsScore"
+        app:layout_constraintVertical_bias="0.8"  />
 
     <Button
         android:id="@+id/autonPointsMinusButton"
@@ -573,16 +640,15 @@
         android:textColor="@android:color/white"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toTopOf="@+id/autonShotsMinusButton"
+        app:layout_constraintEnd_toStartOf="@+id/autonTowerText"
         app:layout_constraintStart_toEndOf="@+id/autonPointsScore"
         app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/autonShotsPlusButton"
         android:layout_width="68dp"
         android:layout_height="51dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="104dp"
         android:text="+"
         android:textSize="30dp"
         android:visibility="gone"
@@ -590,39 +656,48 @@
         android:fontFamily="sans-serif-black"
         android:textColor="@android:color/white"
         app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/autonShotsScore"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/autonShots"
-        app:layout_constraintTop_toBottomOf="@+id/autonFuelText" />
+        app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
+        app:layout_constraintVertical_bias="0.242"/>
 
     <TextView
         android:id="@+id/autonPointsScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="12dp"
         android:text="0"
         android:textAlignment="center"
         android:textSize="30dp"
         android:visibility="gone"
         android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toTopOf="@+id/autonShotsScore"
         app:layout_constraintStart_toEndOf="@+id/autonPoints"
         app:layout_constraintTop_toBottomOf="@+id/autonFuelText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/autonShotsScore"
         android:layout_width="61dp"
         android:layout_height="55dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="32dp"
         android:text="0"
         android:textAlignment="center"
         android:textSize="30dp"
         android:visibility="gone"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/autonPassesScore"
-        app:layout_constraintStart_toEndOf="@+id/autonShots" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toEndOf="@+id/autonShots"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/autonPassesScore"
@@ -636,13 +711,16 @@
         android:visibility="gone"
         android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toTopOf="@+id/commentEditText"
-        app:layout_constraintStart_toEndOf="@+id/autonPasses" />
+        app:layout_constraintEnd_toStartOf="@+id/autonL2CheckBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/autonPasses"
+        app:layout_constraintTop_toBottomOf="@+id/autonShotsPlusButton"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/autonPassesPlusButton"
         android:layout_width="68dp"
         android:layout_height="51dp"
-        android:layout_marginTop="28dp"
         android:text="+"
         android:textSize="30dp"
         android:visibility="gone"
@@ -651,9 +729,11 @@
         android:textColor="@android:color/white"
         app:cornerRadius="24dp"
         app:layout_constraintEnd_toStartOf="@+id/autonPassesScore"
-        app:layout_constraintHorizontal_bias="0.611"
+        android:layout_marginVertical="36dp"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/autonPasses"
-        app:layout_constraintTop_toBottomOf="@+id/autonShotsPlusButton" />
+        app:layout_constraintTop_toBottomOf="@+id/autonShotsPlusButton"
+        app:layout_constraintVertical_bias="0.144" />
 
     <CheckBox
         android:id="@+id/autonClimbCheckbox"
@@ -769,6 +849,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/autonClimbCheckbox"
-        app:layout_constraintTop_toBottomOf="@+id/teleopMovementText" />
+        app:layout_constraintTop_toBottomOf="@+id/autonMovementText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
             autonPassesPlusButton, autonPassesMinusButton;
 
     // TextViews
-    private TextView teleopFuel, teleopMovement, teleopTower,
-            teleopShots, teleopPasses, teleopPoints,
-            autonFuel, autonMovement, autonTower,
-            autonShots, autonPasses, autonPoints,
+    private TextView teleopFuel, teleopMovement, teleopTower,teleopShotsText,
+            teleopPassesText, teleopPointsText, teleopShotsScore,
+            teleopPassesScore, teleopPointsScore, autonFuel, autonMovement,
+            autonTower, autonShotsText, autonPassesText, autonPointsText,
+            autonShotsScore, autonPassesScore, autonPointsScore,
             userTextView;
 
     // CheckBoxes
@@ -54,12 +55,6 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         setContentView(R.layout.activity_main);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         FirebaseHelper firebaseHelper = new FirebaseHelper();
 
         // --- Find Views ---
@@ -74,16 +69,22 @@ public class MainActivity extends AppCompatActivity {
         teleopFuel = findViewById(R.id.teleopFuelText);
         teleopMovement = findViewById(R.id.teleopMovementText);
         teleopTower = findViewById(R.id.teleopTowerText);
-        teleopShots = findViewById(R.id.teleopShots);
-        teleopPasses = findViewById(R.id.teleopPasses);
-        teleopPoints = findViewById(R.id.teleopPoints);
+        teleopShotsText = findViewById(R.id.teleopShots);
+        teleopPassesText = findViewById(R.id.teleopPasses);
+        teleopPointsText = findViewById(R.id.teleopPoints);
+        teleopShotsScore = findViewById(R.id.teleopShotsScore);
+        teleopPassesScore = findViewById(R.id.teleopPassesScore);
+        teleopPointsScore = findViewById(R.id.teleopPointsScore);
 
         autonFuel = findViewById(R.id.autonFuelText);
         autonMovement = findViewById(R.id.autonMovementText);
         autonTower = findViewById(R.id.autonTowerText);
-        autonShots = findViewById(R.id.autonShots);
-        autonPasses = findViewById(R.id.autonPasses);
-        autonPoints = findViewById(R.id.autonPoints);
+        autonShotsText = findViewById(R.id.autonShots);
+        autonPassesText = findViewById(R.id.autonPasses);
+        autonPointsText = findViewById(R.id.autonPoints);
+        autonShotsScore = findViewById(R.id.autonShotsScore);
+        autonPassesScore = findViewById(R.id.autonPassesScore);
+        autonPointsScore = findViewById(R.id.autonPointsScore);
 
         teleopPointsPlusButton = findViewById(R.id.teleopPointsPlusButton);
         teleopPointsMinusButton = findViewById(R.id.teleopPointsMinusButton);
@@ -124,19 +125,19 @@ public class MainActivity extends AppCompatActivity {
         autonButton.setOnClickListener(v -> toggleMode());
 
         // --- Button Logic ---
-        teleopPointsPlusButton.setOnClickListener(v -> changeValue(teleopPoints, +1));
-        teleopPointsMinusButton.setOnClickListener(v -> changeValue(teleopPoints, -1));
-        teleopShotsPlusButton.setOnClickListener(v -> changeValue(teleopShots, +1));
-        teleopShotsMinusButton.setOnClickListener(v -> changeValue(teleopShots, -1));
-        teleopPassesPlusButton.setOnClickListener(v -> changeValue(teleopPasses, +1));
-        teleopPassesMinusButton.setOnClickListener(v -> changeValue(teleopPasses, -1));
+        teleopPointsPlusButton.setOnClickListener(v -> changeValue(teleopPointsScore, +1));
+        teleopPointsMinusButton.setOnClickListener(v -> changeValue(teleopPointsScore, -1));
+        teleopShotsPlusButton.setOnClickListener(v -> changeValue(teleopShotsScore, +1));
+        teleopShotsMinusButton.setOnClickListener(v -> changeValue(teleopShotsScore, -1));
+        teleopPassesPlusButton.setOnClickListener(v -> changeValue(teleopPassesScore, +1));
+        teleopPassesMinusButton.setOnClickListener(v -> changeValue(teleopPassesScore, -1));
 
-        autonPointsPlusButton.setOnClickListener(v -> changeValue(autonPoints, +1));
-        autonPointsMinusButton.setOnClickListener(v -> changeValue(autonPoints, -1));
-        autonShotsPlusButton.setOnClickListener(v -> changeValue(autonShots, +1));
-        autonShotsMinusButton.setOnClickListener(v -> changeValue(autonShots, -1));
-        autonPassesPlusButton.setOnClickListener(v -> changeValue(autonPasses, +1));
-        autonPassesMinusButton.setOnClickListener(v -> changeValue(autonPasses, -1));
+        autonPointsPlusButton.setOnClickListener(v -> changeValue(autonPointsScore, +1));
+        autonPointsMinusButton.setOnClickListener(v -> changeValue(autonPointsScore, -1));
+        autonShotsPlusButton.setOnClickListener(v -> changeValue(autonShotsScore, +1));
+        autonShotsMinusButton.setOnClickListener(v -> changeValue(autonShotsScore, -1));
+        autonPassesPlusButton.setOnClickListener(v -> changeValue(autonPassesScore, +1));
+        autonPassesMinusButton.setOnClickListener(v -> changeValue(autonPassesScore, -1));
 
         // --- Submit ---
         submitButton.setOnClickListener(v -> {
@@ -148,13 +149,13 @@ public class MainActivity extends AppCompatActivity {
             matchData.put("user", userTextView.getText().toString());
             matchData.put("comments", commentEditText.getText().toString());
 
-            matchData.put("teleopPoints", teleopPoints.getText().toString());
-            matchData.put("teleopShots", teleopShots.getText().toString());
-            matchData.put("teleopPasses", teleopPasses.getText().toString());
+            matchData.put("teleopPoints", teleopPointsScore.getText().toString());
+            matchData.put("teleopShots", teleopShotsScore.getText().toString());
+            matchData.put("teleopPasses", teleopPassesScore.getText().toString());
 
-            matchData.put("autonPoints", autonPoints.getText().toString());
-            matchData.put("autonShots", autonShots.getText().toString());
-            matchData.put("autonPasses", autonPasses.getText().toString());
+            matchData.put("autonPoints", autonPointsScore.getText().toString());
+            matchData.put("autonShots", autonShotsScore.getText().toString());
+            matchData.put("autonPasses", autonPassesScore.getText().toString());
 
             firebaseHelper.submitMatchData(
                     LocalDate.now().toString(),
@@ -187,18 +188,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeValue(TextView textView, int delta) {
-        int value = Integer.parseInt(textView.getText().toString());
+        String text = textView.getText().toString().trim();
+
+        int value = 0; // default safe value
+
+        try {
+            value = Integer.parseInt(text);
+        } catch (NumberFormatException e) {
+            // If text is not a number, reset to 0
+            value = 0;
+        }
+
         value = Math.max(0, value + delta);
         textView.setText(String.valueOf(value));
     }
+
 
     private void setAutonVisibility(int v) {
         autonFuel.setVisibility(v);
         autonMovement.setVisibility(v);
         autonTower.setVisibility(v);
-        autonShots.setVisibility(v);
-        autonPasses.setVisibility(v);
-        autonPoints.setVisibility(v);
+        autonPointsText.setVisibility(v);
+        autonShotsText.setVisibility(v);
+        autonPassesText.setVisibility(v);
+        autonShotsScore.setVisibility(v);
+        autonPassesScore.setVisibility(v);
+        autonPointsScore.setVisibility(v);
         autonPointsPlusButton.setVisibility(v);
         autonPointsMinusButton.setVisibility(v);
         autonShotsPlusButton.setVisibility(v);
@@ -219,9 +234,12 @@ public class MainActivity extends AppCompatActivity {
         teleopFuel.setVisibility(v);
         teleopMovement.setVisibility(v);
         teleopTower.setVisibility(v);
-        teleopShots.setVisibility(v);
-        teleopPasses.setVisibility(v);
-        teleopPoints.setVisibility(v);
+        teleopPointsText.setVisibility(v);
+        teleopShotsText.setVisibility(v);
+        teleopPassesText.setVisibility(v);
+        teleopShotsScore.setVisibility(v);
+        teleopPassesScore.setVisibility(v);
+        teleopPointsScore.setVisibility(v);
         teleopPointsPlusButton.setVisibility(v);
         teleopPointsMinusButton.setVisibility(v);
         teleopShotsPlusButton.setVisibility(v);

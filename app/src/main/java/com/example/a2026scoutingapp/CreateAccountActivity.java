@@ -27,11 +27,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         setContentView(R.layout.create_account);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.createAccount), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         createAccountFullName = findViewById(R.id.createAccountFullName);
         createAccountEmail = findViewById(R.id.createAccountEmail);
